@@ -1,0 +1,240 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Download_Monthly_Report" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="In_ID" Type="InArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1098.4,3259.2</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Download_Monthly_Report_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="68">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="47">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="Make a dictionary of queue item ID and use it to organize , merege and etc&#xD;&#xA;" DisplayName="Download_Monthly_Report" sap:VirtualizedContainerService.HintSize="1108.8,3194.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: ACME System 1 - Download Monthly Report" sap:VirtualizedContainerService.HintSize="1046.4,3019.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="39496e6d-7b93-4af5-b8b1-5b1ec4fd10ae" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1012.8,2788.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="s:String[]" Default="[{&quot;January&quot;,&quot;February&quot;,&quot;March&quot;, &quot;April&quot;, &quot;May&quot;, &quot;June&quot;,&quot;July&quot;,&quot;August&quot;, &quot;September&quot;,&quot;October&quot;, &quot;November&quot;, &quot;December&quot;}]" Name="arr_Months" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Vendor Tax ID" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="950.4,236" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="39496e6d-7b93-4af5-b8b1-5b1ec4fd10ae" Text="[In_ID]" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="295, 634, 640, 45" DesignTimeScaleFactor="1.3200000524520874" ElementType="InputBox" FriendlyName="'INPUT vendorTaxID'" FullSelectorArgument="&lt;webctrl id='vendorTaxID' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='vendorTaxID' tag='INPUT' type='text' class='form-control' aaname='' /&gt;" Guid="270ca7a9-27c3-48af-8869-bcad5e289940" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAoQAAAAxCAYAAABDL7igAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAIGSURBVHhe7dpbiupQFEXR2/+2CUkD8qkfUUEI+MLHuSzRUFLVguwxYIFJbMDkJP8aAAClCUIAgOIEIQBAcb+CcJqmNgxD67qurVYrMzMzM1vI0nfpvPTeT19BOI5j6/u+rdfrtt/v2+FwMDMzM7OFLH2Xzkvvpfs+5iBMKebhbrd7/T4ej+1yuZiZmZnZQnY6nV6dl95L931OCucgzPHhZrN5/fF2u7XH49Gez6eZmZmZLWTpu3Reei/dl/6LOQjzTjmVeL/f33cAAFii9F66L/0XcxDmQ8Pr9fqqRwAAliu9l+5L/8VXEOYIEQCA5Uv3CUIAgMIEIQBAcYIQAKA4QQgAUJwgBAAoThACABQnCAEAihOEAADFCUIAgOIEIQBAcYIQAKA4QQgAUJwgBAAoThACABQnCAEAihOEAADFCUIAgOIEIQBAcYIQAKA4QQgAUJwgBAAoThACABQnCAEAihOEAADFCUIAgOIEIQBAcYIQAKA4QQgAUJwgBAAoThACABQnCAEAihOEAADFCUIAgOL+DMKu69r5fH5fAQCwZOm+9F/MQTgMQxvH8X0FAMCSpfvSfzEH4TRNre/7djqd3ncAAFii9F66L/0XcxBGSjEPt9ut7wkBABYmfZfOS+/9fDP8FYSRUszxYd4p50NDMzMzM1vG0nfpvM/J4MevIAQAoJLW/gNh+Fs7tFaN8QAAAABJRU5ErkJggg==" InformativeScreenshot="0e53da2ee533072bfeed00e3c63c1bc0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+              </uix:NTypeInto.Target>
+            </uix:NTypeInto>
+            <uix:NClick ClickType="Single" DisplayName="Click 2023 Year" sap:VirtualizedContainerService.HintSize="950.4,171.2" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39496e6d-7b93-4af5-b8b1-5b1ec4fd10ae" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="9, 251, 0, 0" DesignTimeScaleFactor="1.3200000524520874" ElementType="Text" FriendlyName="'2022'" FullSelectorArgument="&lt;webctrl aaname='2023' class='text' parentid='searchForm' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='2022' class='text' parentid='searchForm' tag='SPAN' type='' check:innerText='2022' /&gt;" Guid="ed061dd6-1ce9-465b-a7cd-b26cd7665628" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAeCAYAAAC49JeZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAMDSURBVFhH7VYxS+tQFH4/wV+RrSAUBIcHdjGTWSy4SMGC8IpgJ7vF4QWXuBgKoksQHunUB5JBqFDiIFSQCg98SwSHwIOAQ6CQ+XsnN0l7bxJbn0N5hQ7fcE++k/vlnO+emy8rKytYNCym6DAMsWhYip4XlqLnhaXoeSEn2n+yoNZklCUJklTC+o4K68kXOAwjD85ZA/JaymvCfHifp3wtEY+4azIaZw68UYZH8PoGGlvrKLG9y5C/GXBe8zxBdHCvQaaEck2DdePAubGg7USbydDuAy7Rh31I8VUFzfNuzKuVGU9/4HgjF9Y+x+s76J7Th9IepX0LLifc7dRJbAnK4QW6xHN+XqCxSeJX67BeJrwInGgX5jaR9sSXhaPnOL5twk1jjwYqtIF6mxG4J/KCvkpCKtDu+A+m+G0Up/x+Eg8cqKsSKt8dBBwvfOuxeOlYjE9EezZa1MLdH+4kKcHzpUxV1DBI1sN2hSpA60yL/esm8agySUuHlwrZTIOTtQKJaVG16x0vXj9eQCGbaXcZXhigdxQX0uPiHziIProHlLhhYMjWHrr7+Rcx/DahkJj85hmwTkloXhecAR6jIYwN2uvQhs/FZ4pOfV69SjvgxTagVma54auFOl/BIox9rsIJCp5zSH0+tlGCqaKDXybqkaeEQ5N4/2QgcBlmiaZJ0juOrJY92Hl45PuoWDLtI/ic8K5o/06HwgSbeH7jn32y0lGFD+IJo95O6QTB7TTYyJWPe4WjsVD0OOnIFicJwyc87TvQtyJLVGE8TqnwyIdzqjBLVNvDXIVTZEQHNBmqM5OmT49dca6+0FSK5u1mC3Zm3gqgTthHsXVa1/kJxkMQnRq/3pme9NE5Hb4NoDHB9IGCxbIIMDj5mNcjTET/sdEkD0vru1BPdeg5kFXGiZFF4puykbkR+U2H7UiIRLdc0ft0mPfJyHsy2KGTtpqFPP1qUDzy4tZS4ruYXC4MM/89khlb+K4Y6YFldit4Psa/Xy7/H5ai54Wl6HlhKXpeWEDRIf4CLBbqxVcjAeIAAAAASUVORK5CYII=" InformativeScreenshot="d9599842e014a38ba837e9b7d9fb8c5e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="950.4,2176.8" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arr_Months]">
+              <ui:ForEach.Body>
+                <ActivityAction x:TypeArguments="x:String">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="915.2,2036" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="x:String" Name="CurrentItem" />
+                      <Variable x:TypeArguments="x:String" Name="Month" />
+                      <Variable x:TypeArguments="si:FileInfo" Name="ExcelFile" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="852.8,73.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[Month]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[item.ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <uix:NClick ClickType="Single" DisplayName="Click Month" sap:VirtualizedContainerService.HintSize="852.8,171.2" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39496e6d-7b93-4af5-b8b1-5b1ec4fd10ae" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="295, 732, 290, 44" DesignTimeScaleFactor="1.3200000524520874" ElementType="Button" FriendlyName="'---'" FullSelectorArgument="&lt;webctrl aria-role='button' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='button' tag='BUTTON' type='button' class='btn dropdown-toggle bs-placeholder btn-default' aaname='---' check:innerText='---' /&gt;" Guid="03659e98-2580-4847-9909-5f9b08ef3593" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAASYAAAAwCAYAAAC8PNfoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAG7SURBVHhe7dgxbttAEIbR3P8GuoAv4Cu4FEB2aXgBhh0bFiw2+Q2RkOPEsBNRmuI9YAoO+w+7+60BFCNMQDnCBJTzLkzzPLdhGFrXde18PhtjzGGTzqQ36c61N2Eax7H1fd+maWrrul62AMdIZ9KbdCf92exhSrHyc1mWywbgPtKd9Gc7Oe1hynEq5QJ4hPQnHYo9TLnrub4Bj5L+pEOxhykPUQCPtHVImIAyhAkoR5iAcoQJKEeYgHKECShHmIByhAkoR5iAcoQJKEeYgHKECShHmIByhAn4tPThdDp9OLdoiDABX/JRnG7VD2ECvuxPcbplO4QJ+CfXcbp1N44J04+X9nRV0td5emlT+96ef9+fnn9t/7YHKksvbh2lECagnGPCBPAfhAkoR5iAcoQJKEeYgHKECShHmIByhAkoR5iAcoQJKEeYgHKECShHmIByhAko512Yuq5r67pevgDuK/1Jh2IP0zAMbZqmyxfAfaU/6VDsYZrnufV935ZluWwA7iPdSX/SodjDFOM4vv5MuVzrgKOlM+lNupP+bN6EKVKsHKdy18tDlDHGHDXpTHqznZQ278IE8Fit/QQWqeQ2mVeZpgAAAABJRU5ErkJggg==" InformativeScreenshot="17223a6bf92371484fec13f085456bef.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="295, 699, 62, 26" ElementType="Text" FriendlyName="'Month'" FullSelectorArgument="&lt;webctrl aaname='Month:' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Month:' tag='LABEL' type='' class='' check:innerText='Month:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEIAAAAeCAYAAACYGMhkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAGSSURBVGhD7ZaBjYMwDEVvJ+ZqVkFsEiZBjIHEDrkk/CSOcaBFV0539ZcsFVz49osDfDlVlIKAFASkICAFASkISEFACgJSEFANYupd13UlhhmJonkgeR9mXJF5t1ZnH8xvsc6gjn7CuYs6BtH1rkYxu77K3wWi+P4SCOPsglwQMU7xz0EYZ/wYcuN1NFt+6OXCIL59uof1g81EvOyyjX25hkzibnG2iI0zELUvW8Qgci8OrgnCjvidmyjFmtE2QOy3TglWWKPBEoDxJAg52Na+BGJKJqmB1GQ4lke1rAhtmsChk0EbJOfpqpZiz7dGa4qqhi+BIOMaL8q5YCgV1ig2qLovP8eKEvf9OYja86CWhg5AkNXxr1H6WzQSG4CknAQn6CKI2vOHQdDj9PDcDD8NBDGqzotGB+ZS038KBHlTxMgPNdno2sPyRhDZk///FAT5dgiRP7lbxEnTu2i9yp4Bwb8zkLsThHxxC8Qm+gqMQSch6SUQXqSOENH3bSA+WAoCUhCQgoAUBKQgIAUBKYgo574BASrEoCpO7/AAAAAASUVORK5CYII=" SearchSteps="Selector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <uix:NClick ClickType="Single" DisplayName="Select month" sap:VirtualizedContainerService.HintSize="852.8,171.2" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39496e6d-7b93-4af5-b8b1-5b1ec4fd10ae" Version="V3">
+                      <uix:NClick.Target>
+                        <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="321, 381, 55, 30" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'March'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl aaname='{0}' class='text' parentid='searchForm' tag='SPAN' /&gt;&quot;, Month)]" FuzzySelectorArgument="&lt;webctrl aaname='March' class='text' parentid='searchForm' tag='SPAN' type='' check:innerText='March' /&gt;" Guid="f2684ee9-ade4-4140-ba33-f62efe43a5fe" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADcAAAAeCAYAAACIeIa4AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAALnSURBVFhH7ZXPZyNhGMf3f3pPcwghhB56ai4NpWMPG6Vh6SiNXmqJWdboIafKXqLsyGVyWBNWDiWlJodKWXqoKUsOJZTQw1C++7wzz+TH/NjN2ipT82WYmffn53m+7/O+wxtWDpdV5XBZVQ6XVeVwWdUK3PhUQAj56Bh6/DOmKax97nc65n+vJV5736K3vysFTkC/TKF7sFDnPhmEq6MuJ2gOkYQ37dUhdlWo2YQzYEmARGtOYO4K1HsWjAQ4786GcVBFuSDnoadUQa1pwX3iDlLXhh9Aa2SjsaFAFMqodV1upO2POmi8L0OR46lNPe7AmZMs4G5vTDR2i/46yoYKvefGkpEIN360odGgmDV/mZQx2tjDOA53L9sEinsUnAsHzpUN85Pqb1I5GmDG3QI4BUqhgpPuEE7fxOA+aJpQUGX/cI5hz0CtROtstTD2t8JwBRpfqsHo0Xhap70nIRXoV6v7TYajrdiH9B6x5qSrsiXicLfnlLEtGrsyvwfnM2XHn5PlwwlUzxfZ8uU50CnjSvQ4yKCRA4xLGR6GEypMDogvHiu+OPwjUAocMOtr9L5szcCSWl8ukpC5FPlndHkehjOu+TvUTYuypsT/r4jhPli0m2Uln8VUOEStSRGsCg32o/xIh/NmU7jX0lIdGMcqnz9pZe6QAjf9LoOw1C9RyRD/DhexpvutCnFo89lJgJsMcLItLSjnKKKyU4XW7KDdpHHrwPkZfjU4tmZBh+O5MHdCS0pF4TgQmzoGk5UTEwRlDbh0W47RKoUV9QXhAmtSFfraJks2MJiXvCgcf0cONJ5ddOicrgWXUlC8kYHNOfRLwoUZkRtfLucxuBkGR9KSRdTObCrPQRmv0z1WLMkyvQYcKbwKKgcd2HKO7gmqEvijzZt+UTi2Ji3Y+LFAi8ORnlxYzbCAKChva2hfuJj9bPuRn99Bf4CTWrnE6QrQzhxMn7nxf+DemnK4rCqHy6pyuKzqDcMBvwGcGtc+YgbBRAAAAABJRU5ErkJggg==" InformativeScreenshot="4b7e1644d9c755e0b3dd92260ac5d9ca.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                      </uix:NClick.Target>
+                    </uix:NClick>
+                    <ui:GetLastDownloadedFile IgnoreFiles="{x:Null}" DisplayName="Wait for Download" DownloadFolder="C:\Users\Nawazish\Documents\TEST" File="[ExcelFile]" sap:VirtualizedContainerService.HintSize="852.8,581.6" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_2" Timeout="5">
+                      <ui:GetLastDownloadedFile.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,294.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ClickType="Single" DisplayName="Click Download Report" sap:VirtualizedContainerService.HintSize="337.6,171.2" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39496e6d-7b93-4af5-b8b1-5b1ec4fd10ae" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reports/download" DesignTimeRectangle="295, 818, 176, 44" DesignTimeScaleFactor="1.3200000524520874" ElementType="Button" FriendlyName="'Download Report'" FullSelectorArgument="&lt;webctrl tag='BUTTON' aaname='Download Report' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='BUTTON' aaname='Download Report' type='button' class='btn btn-primary' check:text='Download Report' /&gt;" Guid="c3836330-6117-4dd5-b467-c9d032963054" ImageBase64="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" InformativeScreenshot="cd7f69fc983da655c536524b19fb7a81.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Monthly Report' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:GetLastDownloadedFile.Body>
+                    </ui:GetLastDownloadedFile>
+                    <uix:NCheckState DisplayName="Check App State 'No report'" sap:VirtualizedContainerService.HintSize="852.8,532" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="39496e6d-7b93-4af5-b8b1-5b1ec4fd10ae" Timeout="1" Version="V3">
+                      <uix:NCheckState.IfExists>
+                        <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="400,296" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NClick ClickType="Single" DisplayName="Click OK" sap:VirtualizedContainerService.HintSize="337.6,171.2" sap2010:WorkflowViewState.IdRef="NClick_5" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="39496e6d-7b93-4af5-b8b1-5b1ec4fd10ae" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable DesignTimeRectangle="1200, 317, 106, 60" DesignTimeScaleFactor="1.25" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;ctrl name='acme-test.uipath.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='acme-test.uipath.com says' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' automationid='' check:fulltext='OK' /&gt;" Guid="a01834e6-a361-48c0-bdd7-c90706e99474" ImageBase64="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" InformativeScreenshot="0db4caeccc39c56a0acf47fec91bdb0c.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Download Monthly Report - Google Chrome' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                      </uix:NCheckState.IfExists>
+                      <uix:NCheckState.IfNotExists>
+                        <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="400,256" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="337.6,131.2" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Month+ &quot; Report Donwloaded&quot;]" />
+                        </Sequence>
+                      </uix:NCheckState.IfNotExists>
+                      <uix:NCheckState.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="632, 231, 674, 31" DesignTimeScaleFactor="1.25" ElementType="Text" FriendlyName="'No report'" FullSelectorArgument="&lt;ctrl name='acme-test.uipath.com says' role='dialog' /&gt;&lt;ctrl name='No report found**' role='text' text='No report found*.' /&gt;" FuzzySelectorArgument="&lt;ctrl name='acme-test.uipath.com says' role='dialog' /&gt;&lt;ctrl name='No report found**' role='text' text='No report found*.' automationid='' check:text='No report found for this vendor / month / year that you have specified.' /&gt;" Guid="f0a8053a-b859-4e93-8cce-67c5d306c383" ImageBase64="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" InformativeScreenshot="5ed0673137d4b7528af760c1f6d5c3c7.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='ACME System 1 - Download Monthly Report - Google Chrome' /&gt;" SearchSteps="Selector" Version="V1" Visibility="Interactive" />
+                      </uix:NCheckState.Target>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </uix:NCheckState>
+                    <ui:MoveFile ContinueOnError="{x:Null}" DestinationResource="{x:Null}" PathResource="{x:Null}" Destination="C:\Users\Nawazish\Documents\UiPath\Generate Yearly Report-REF-Performer\Data\Input" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="852.8,181.6" sap2010:WorkflowViewState.IdRef="MoveFile_1" Path="[ExcelFile.FullName]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEach.Body>
+            </ui:ForEach>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAReSURBVFhHvZdtbFNlFMcf3SxUfI0miLAEWdShCV+EGD9oUJBJAobwQb8IGklkKEQkcy8MZK90tGsnZbxsvkDmxsYkS8QFPhDYLIy+sbv2rhW3dYPFbGyVbYwJJMu2wzm3Prd317ZCc+uHf9vnPC/n13PPc57nMrZX6EPdQo39zyKf1wgAZJWQ2sJtzYVrkw+lDT9G5UbBZWB5TmC7XIlRHgnXJ4hSyecwAYwxAzawM/1EoKFSvLEh97eBjOw4xedmNg9k7LSFRO2sloEMg2Po0x3n+4tYMUaiUIr0SAiAiL5xwfrGqyvSt69hiZZuXzv6cwP+cQVAoRveqQtsizRBS33vHV6cTAD5agA0rG7o+SLSpHg0ODG9aGlFR+vy+kCl0l4p3HgpKkC6RgAA8GxSqQfY5zZgm22wq3XwFO+zOIeiA6z5OQyQctBXpTd6BdwZwrsNPVZuV2vJD3/YWOFl9xNmr5hULGwiW8v1OxvZpmZg5SKw7a2Y8e3Ax5c5g9EB1p4MA+hNnjssH7dlth2WHusMcrta8yt8wHLswIpwbEHbUW5P/e4KsK0XJDX2jBVw+30DPGkR7awIt8pOJ7xR03WO29VadNg/Ke1tLDJPfyvuUfbtbu5fn+MIvqK0HYmVAzMAzKJTAdCsXEQpBJimMQQwx+TNjzRm6PbUQ/x3lWc4cQC60nYZYOEhP+jxsTxqbAfMp3JurxZHNAY44p/iAHpFBB63eIF9jbmBJVhn9Bi5vdanPYAcASUA/mtgu7H24+H2nLVDttdoDZAaBWAB7Q4CwLo/d38cAE9Z7hsg4iOIC+B9BcDsfR6XdGrhFltW3XWe29VKq/JPSAAGHFsiyPs9LgBlJcQk8mGFA5ZlhxX1gTPcrlbKobCjOWavidvjAnjreEAG+Ph03yn21SVgmZfg9druAW5XK9mI2Y5HOct2gFUIbuH25w/EAfBmTRjgqH9ks1RK6VDBx9B5a+IF3sc1DbCE5TqoBEvb7drfE/N431xrx4MDrKwPA5D0Zeg8FxehwXvckHfh+icmVzCt7vfRxTkt/VmMzopinLv1IrxW03VTOTdaBKpjAbynOo6b/hzfwj46hxmO/ZQPGGZdGYac2plYZOgOSU4+s8HoFKxSzk2hHKBHg3VgntUnnxExI6AGIH3Y1NfGdmAufInHKk2ik48umBgRsusK3LDhbL9c6biYAZ1suyglMUbpILfX+R8QgNTUO77sg8beX58xeuAxrO3JeL7Pt4jjG3+5+lPf3UldpDlvH+++mXqgY/LlSj8srw1kcfsxMcZhFA1ASx0WYgDglSzhl9IfPcNpUQHwUro20iStNQsf47+v5ZjN6072lpy4Mrqw3BV81eSYKSPKjCq1D0ptc4Qx/6UK4a8XjY6hdcmUoJi86FsCCL2aIUQSdszGRHsYvylMWusRFNuLotoReh2UXs1CDXpXo9cl2l5ElwjxtblPEn50o0ZQQUmGf74ToZlro0+h8x4tMHhuvyezngAAAABJRU5ErkJggg==" InformativeScreenshot="288a04768e94d80908eb8e3257b80f1a.jpg" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Download Monthly Report' /&gt;" Url="https://acme-test.uipath.com/reports/download" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
